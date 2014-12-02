@@ -13,8 +13,6 @@
                            <p class="z-formnote z-informationmsg">Si l'enviament de correu electrònic per servei web està desactivat, s'utilitza el sistema d'enviament definit en el mòdul Mailer</p>
                 </div>
             </fieldset>
-            {* aginard: hide some params to everybody but xtecadmin *}
-            {if $showExtraFunc}
             <fieldset>
                 <legend>Paràmetres generals</legend>
                 <div class="z-formrow">
@@ -61,17 +59,6 @@
                     <p class="z-formnote z-informationmsg">{gt text='Camí absolut al fitxer de registre'}</p>
                 </div>
             </fieldset>
-            {else}
-            <input id="idApp" type="hidden" name="idApp" size="40" value="{$idApp}" />
-            <input id="replyAddress" type="hidden" name="replyAddress" size="40" value="{$replyAddress}" />
-            <input id="sender" type="hidden" name="sender" size="40" value="{$sender}" />
-            <input id="environment" type="hidden" name="environment" size="40" value="{$environment}" />
-            <input id="contenttype" type="hidden" name="contenttype" value="2" />
-            <input id="log" type="hidden" name="log" size="40" value="0" />
-            <input id="debug" type="hidden" name="debug" size="40" value="0" />
-            <input id="logpath" type="hidden" name="logpath" size="100%" value="" />
-            {/if}
-            {* aginard: end of change *}
             <div class="z-center">
                 <span class="z-buttons">
                     <a href="javascript:document.forms['config'].submit();">

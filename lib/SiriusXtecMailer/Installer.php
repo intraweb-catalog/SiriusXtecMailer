@@ -9,17 +9,13 @@ class SiriusXtecMailer_Installer extends Zikula_AbstractInstaller {
      * @return bool true on success, false otherwise
      */
     public function Install() {
-        // @aginard: get environment info from html/config/env-config.php file, so
-        // it's automatically filled with proper value
-        global $agora;
-        $environment = $agora['server']['enviroment'];
 
         // Set default module variables
-        $this->setVar('enabled', 1)
-                ->setVar('idApp', 'AGORA')
+        $this->setVar('enabled', 0)
+                ->setVar('idApp', 'SIRIUS')
                 ->setVar('replyAddress', System::getVar('adminmail'))
                 ->setVar('sender', 'educacio')
-                ->setVar('environment', $environment)
+                ->setVar('environment', 'PRO') // Referent a l'entorn (INT, ACC, PRO, FRM)
                 ->setVar('contenttype', 2)
                 ->setVar('log', 0)
                 ->setVar('debug', 0)

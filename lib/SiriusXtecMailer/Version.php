@@ -17,7 +17,7 @@ class SiriusXtecMailer_Version extends Zikula_AbstractVersion {
      */
     public function getMetaData() {
         $meta = array();
-        $meta['displayname'] = $this->__("Mailer XTEC");
+        $meta['displayname'] = $this->__("Sirius XTEC Mailer");
         $meta['description'] = $this->__("Amplia les funcionalitats del mòdul Mailer per poder enviar correu electrònic utilitzant el servei web de la XTEC");
         $meta['url'] = $this->__("SiriusXtecMailer");
         $meta['version'] = '1.0.0';

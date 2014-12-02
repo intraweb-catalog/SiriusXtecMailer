@@ -39,18 +39,6 @@ class SiriusXtecMailer_Controller_Admin extends Zikula_AbstractController {
 
         // assign all module vars
         $render->assign(ModUtil::getVar('SiriusXtecMailer'));
-
-        // @aginard: force replyAddress to be site admin mail
-        $render->assign('replyAddress', System::getVar('adminmail'));
-
-        // @aginard: configuration params will be only shown to xtecadmin in multisite environments
-        global $ZConfig;
-
-        $is_xtecadmin = (UserUtil::getVar('uname') == 'xtecadmin') ? true : false;
-        $showExtraFunc = (!(bool)$ZConfig['Multisites']['multi'] || $is_xtecadmin) ? true : false;
-
-        $render->assign('showExtraFunc', $showExtraFunc);
-
         return $render->fetch('siriusxtecmailer_admin_modifyconfig.tpl');
     }
 

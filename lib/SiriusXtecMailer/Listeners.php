@@ -79,23 +79,19 @@ class SiriusXtecMailer_Listeners {
 
         if ($enabled == 0) {
             // Add processed flag
-            $args['processed'] = 1;
-            $result = ModUtil::apiFunc('Mailer', 'user', 'sendmessage', $args);
-            return $result;
+            //$args['processed'] = 1;
+            //$result = ModUtil::apiFunc('Mailer', 'user', 'sendmessage', $args);
+            //return $result;
+            return false;
         }
 
         $idApp = ModUtil::getVar('SiriusXtecMailer', 'idApp');
         $replyAddress = ModUtil::getVar('SiriusXtecMailer', 'replyAddress');
         $sender = ModUtil::getVar('SiriusXtecMailer', 'sender');
-        //$environment = ModUtil::getVar('SiriusXtecMailer','environment');
+        $environment = ModUtil::getVar('SiriusXtecMailer','environment');
         $log = ModUtil::getVar('SiriusXtecMailer', 'log');
         $debug = ModUtil::getVar('SiriusXtecMailer', 'debug');
         $logpath = ModUtil::getVar('SiriusXtecMailer', 'logpath');
-
-        // @aginard: get environment info from html/config/env-config.php file, so
-        // it's automatically filled with proper value
-        global $agora;
-        $environment = $agora['server']['enviroment'];
 
         $mail = new mailsender($idApp, $replyAddress, $sender, $environment, $log, $debug, $logpath);
 
@@ -190,6 +186,7 @@ class SiriusXtecMailer_Listeners {
             // message not sent
             return LogUtil::registerError(__f('Error! A problem occurred while sending an e-mail message to \'%1$s\' (%2$s) with subject \'%3$s\'', array($args['toname'], $args['toaddress'][0], $args['subject'])));
         }
+		$event->stop();
         return true; // message sent    
     }
 
