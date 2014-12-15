@@ -1,16 +1,15 @@
 SiriusXtecMailer module
 =======================
-SiriusXtecMailer module **for Zikula 1.3.x**
+SiriusXtecMailer module 1.0.0 **for Zikula 1.3.x**
 
-  - Based on XtecMailer module from [Agora](https://github.com/projectestac/agora) project
   - It's a listener from Mailer event and it calls to a webservice to send emails.
-  - Preparing code for [Sirius](apliense.xtec.cat/sirius) project
+  - If SiriusXtecMailer can send mails, Mailer process is stopped.
 
 Changelog
 ---------
 
 ### Master branch
 
-Developing module - No releases yet
+### SiriusXtecMailer 1.0.0 (2014/12/15)
 
-Init commit: just cloning XtecMailer
+  - Based on XtecMailer module from [Agora](https://github.com/projectestac/agora) project
