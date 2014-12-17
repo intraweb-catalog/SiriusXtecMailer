@@ -22,7 +22,7 @@
                 </div>
                 <div class="z-formrow">
                     <label for="replyAddress">replyAddress</label>
-                    <input id="replyAddress" type="text" name="replyAddress" size="40" value="{$replyAddress}" readonly="readonly" />
+                    <input id="replyAddress" type="text" name="replyAddress" size="40" value="{$replyAddress}" />
                     <p class="z-formnote z-informationmsg">{gt text='Adreça de correu electrònic de resposta'}</p>
                 </div>
                 <div class="z-formrow">

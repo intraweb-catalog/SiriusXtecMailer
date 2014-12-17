@@ -187,6 +187,7 @@ class SiriusXtecMailer_Listeners {
             return LogUtil::registerError(__f('Error! A problem occurred while sending an e-mail message to \'%1$s\' (%2$s) with subject \'%3$s\'', array($args['toname'], $args['toaddress'][0], $args['subject'])));
         }
 		$event->stop();
+		$event->setData(true);
         return true; // message sent    
     }
 
